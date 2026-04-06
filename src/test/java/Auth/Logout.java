@@ -1,0 +1,53 @@
+package Auth;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Logout {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+ChromeDriver driver = new ChromeDriver();
+		
+		// maximize the window
+		driver.manage().window().maximize();
+		
+		// open the website 
+		driver.get("https://mydentalwellness.vercel.app/");
+		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		// Click on the login button 
+		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
+		loginButton.click();
+		
+		// Enter the email
+		WebElement email = driver.findElement(By.id("Enter your email"));
+		email.sendKeys("ashishappnox1@gmail.com");
+		
+		// Enter the password
+		WebElement password =driver.findElement(By.id("password"));
+		password.sendKeys("Ashish@567");
+		
+		// click on login button
+		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
+		login.click();
+		Thread.sleep(2000);
+		
+		// click on the profile 
+		
+		WebElement profile = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/header/div[2]/div[4]/div[1]/div[1]"));
+		profile.click();
+		Thread.sleep(1000);
+		
+		// click on logout
+		WebElement logout = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/header/div[2]/div[4]/div[2]/div[2]/button"));
+		logout.click();
+
+	}
+
+}
