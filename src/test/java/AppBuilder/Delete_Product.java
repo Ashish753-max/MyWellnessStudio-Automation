@@ -1,4 +1,4 @@
-package Auth;
+package AppBuilder;
 
 import java.time.Duration;
 
@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login {
+public class Delete_Product {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		ChromeDriver driver = new ChromeDriver();
+ChromeDriver driver = new ChromeDriver();
 		
 		// maximize the window
 		driver.manage().window().maximize();
@@ -37,10 +37,27 @@ public class Login {
 		// click on login button
 		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
 		login.click();
+		Thread.sleep(3000);
 		
+		// Click on the App builder section
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]")).click();
+		Thread.sleep(2000);
 		
+		// click on the Product section
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[4]")).click();
+		Thread.sleep(2000);
 		
-
+		// click on the delete button of the product (first)
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[8]/div/div/div[2]/button")).click();
+		Thread.sleep(1000);
+		
+		// click on the confirm delete buttom
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[2]/div[2]/div[2]/div/button[2]")).click();
+		Thread.sleep(1000);
+		
+		// checking the product is deleted or not 
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/button")).click();
+		Thread.sleep(1000);
 	}
 
 }

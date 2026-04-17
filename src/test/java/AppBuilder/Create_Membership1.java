@@ -1,0 +1,73 @@
+package AppBuilder;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Create_Membership1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		// maximize the window
+		driver.manage().window().maximize();
+		
+		// open the website 
+		driver.get("https://mydentalwellness.vercel.app/");
+		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		// Click on the login button 
+		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
+		loginButton.click();
+		Thread.sleep(2000);
+		
+		// Enter the email
+		WebElement email = driver.findElement(By.xpath("//*[@id=\"email\"]"));
+		email.sendKeys("ashishappnox1@gmail.com");
+		
+		// Enter the password
+		WebElement password =driver.findElement(By.xpath("//*[@id=\"password\"]"));
+		password.sendKeys("Ashish@567");
+		
+		// click on login button
+		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
+		login.click();
+		Thread.sleep(3000);
+		
+		// Click on the App builder section
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]")).click();
+		Thread.sleep(2000);
+		
+		// click on the Membership section
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[5]")).click();
+		Thread.sleep(2000);
+		
+		// click on the create new membership
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]")).click();
+		Thread.sleep(1000);
+		
+		// Enter the memberhship name 
+		WebElement membershipName = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@placeholder='Enter membership name']")));
+        membershipName.sendKeys("Gold's");
+		
+		// Enter the price 
+		driver.findElement(By.xpath("//input[@placeholder='0']")).sendKeys("50");
+		Thread.sleep(1000);
+		
+		// Enter the description
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[3]/textarea")).sendKeys("His unique understanding of strength training and the needs of the fitness community shaped the gym's foundation. From the very start, Gold's Gym became the epicenter of the bodybuilding scene, attracting passionate athletes and enthusiasts eager to train at the birthplace of modern fitness culture.");
+        Thread.sleep(1000);
+        
+        
+        // Click on the save button
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[2]/button[2]")).click();
+	}
+
+}
