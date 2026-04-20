@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_Post {
+public class Update_Post {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-       ChromeDriver driver = new ChromeDriver();
+ChromeDriver driver = new ChromeDriver();
 		
 		// maximize the window
 		driver.manage().window().maximize();
@@ -43,25 +43,9 @@ public class Create_Post {
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[1]")).click();
 		Thread.sleep(2000);
 		
-		// click on the new post 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/button")).click();
+		// Click on the edit button
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[5]/div/div/button")).click();
 		Thread.sleep(1000);
 		
-		// Enter the post image
-				
-		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
-
-	   String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
-	uploadImage.sendKeys(imagePath);
-	
-	//Enter the description
-	driver.findElement(By.xpath("//textarea[@placeholder='Craft a compelling story about this transformation or insight...']")).sendKeys("This is post descripton");
-	Thread.sleep(1000);
-	
-	
-		
-		
-
 	}
-
 }

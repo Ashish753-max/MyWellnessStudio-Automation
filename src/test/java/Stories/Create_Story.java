@@ -51,6 +51,14 @@ ChromeDriver driver = new ChromeDriver();
 		driver.findElement(By.xpath("//input[@placeholder='e.g., Client Success Journey']")).sendKeys("Patient Treatment Story");
 		Thread.sleep(1000);
 		
+		// Upload the image 		
+		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
+
+		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
+		uploadImage.sendKeys(imagePath);
+
+		Thread.sleep(2000);
+		
 		//Enter the description
 		driver.findElement(By.xpath("//textarea[@placeholder='Tell the story of the transformation...']")).sendKeys("The client treatment story description provides a detailed overview of the client’s treatment journey, including the initial consultation, diagnosis, treatment plan, procedures performed, and overall progress.");
 		Thread.sleep(1000);

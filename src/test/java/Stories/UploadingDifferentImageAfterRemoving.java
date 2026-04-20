@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Update_StoryDescription {
+public class UploadingDifferentImageAfterRemoving {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -52,35 +52,23 @@ ChromeDriver driver = new ChromeDriver();
 		Thread.sleep(1000);
 		
 		// Upload the image 		
-				WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
+		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
 
-				String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
-				uploadImage.sendKeys(imagePath);
+		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
+		uploadImage.sendKeys(imagePath);
 
-				Thread.sleep(2000);
-		
-		//Enter the description
-		driver.findElement(By.xpath("//textarea[@placeholder='Tell the story of the transformation...']")).sendKeys("The client treatment story description provides a detailed overview of the client’s treatment journey, including the initial consultation, diagnosis, treatment plan, procedures performed, and overall progress.");
-		Thread.sleep(1000);
-		
-		// click on the create story button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]")).click();
 		Thread.sleep(2000);
 		
-		// click on the edit button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[4]/div/div/button[1]")).click();
+		// Click on the remove image button
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div/div/button[2]")).click();
 		Thread.sleep(2000);
 		
-		WebElement field = driver.findElement(By.xpath("//textarea[@placeholder='Tell the story of the transformation...']"));
+		// Upload new  image 		
+				WebElement uploadImage1 = driver.findElement(By.xpath("//input[@type='file']"));
 
-		// Clear old text
-		field.clear();
-
-		// Enter new text
-		field.sendKeys("Updated Story description");
-
-		// Click on update story button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]")).click();
+				String imagePath1 = "C:\\Users\\user\\Pictures\\Screenshots\\download (3).jpg";
+				uploadImage1.sendKeys(imagePath1);
+				
 
 	}
 
