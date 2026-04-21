@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Unarchive_Story {
 
@@ -19,8 +18,6 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// open the website 
 		driver.get("https://mydentalwellness.vercel.app/");
-		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
-		
 		// Click on the login button 
 		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
 		loginButton.click();
@@ -57,7 +54,7 @@ ChromeDriver driver = new ChromeDriver();
 				String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
 				uploadImage.sendKeys(imagePath);
 
-				Thread.sleep(2000);
+				Thread.sleep(2000); 
 		
 		//Enter the description
 		driver.findElement(By.xpath("//textarea[@placeholder='Tell the story of the transformation...']")).sendKeys("The client treatment story description provides a detailed overview of the client’s treatment journey, including the initial consultation, diagnosis, treatment plan, procedures performed, and overall progress.");

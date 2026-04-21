@@ -65,10 +65,10 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// click on the create story button
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		// click on the archive button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/div[1]/table/tbody/tr/td[4]/div/div/button[2]")).click();
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr[1]/td[4]/div/div/div[2]/button")).click();
 		Thread.sleep(1000);
 		
 		// click on the confirm button

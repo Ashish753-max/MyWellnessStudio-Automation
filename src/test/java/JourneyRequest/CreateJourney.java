@@ -3,13 +3,9 @@ package JourneyRequest;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.ISelect;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateJourney {
@@ -24,8 +20,6 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// open the website 
 		driver.get("https://mydentalwellness.vercel.app/");
-		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
-		
 		// Click on the login button 
 		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
 		loginButton.click();

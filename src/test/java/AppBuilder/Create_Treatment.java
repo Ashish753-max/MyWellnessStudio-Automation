@@ -50,18 +50,21 @@ public class Create_Treatment {
 		Thread.sleep(2000);
 		
 		// click on the create new treatment 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]")).click();
+		Thread.sleep(1000); 
 		
-		// enter the treatment name 
-		WebElement treat = wait1.until(ExpectedConditions.elementToBeClickable(By.id("input-bbidq2m")));
-		treat.sendKeys("Scaling");
-		Thread.sleep(1000);
+		// Enter the story title
+				driver.findElement(By.xpath("//input[@placeholder='Treatment name']")).sendKeys("Heart Checkup");
+				Thread.sleep(2000);
 		
-		// Locate file input
-		WebElement uploadElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[6]/div/div"));
-        // Provide file path
-		uploadElement.sendKeys("\"C:\\Users\\user\\Downloads\\Screenshot 2026-04-09 094548.png\"");
+		// Upload the image 	
+		WebElement uploadImage = driver.findElement(
+	    By.xpath("//div[contains(@class,'border-dashed')]//input[@type='file']")
+					);
+
+	    uploadImage.sendKeys("C:\\Users\\user\\Pictures\\Screenshots\\download.jpg");
+		Thread.sleep(2000);
+
 		
 		
 		

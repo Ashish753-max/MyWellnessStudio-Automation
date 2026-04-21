@@ -58,12 +58,21 @@ public class Create_Membership1 {
         membershipName.sendKeys("Gold's");
 		
 		// Enter the price 
-		driver.findElement(By.xpath("//input[@placeholder='0']")).sendKeys("50");
+		driver.findElement(By.xpath("//input[@placeholder='0.00']")).sendKeys("50");
 		Thread.sleep(1000);
+		
 		
 		// Enter the description
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[3]/textarea")).sendKeys("His unique understanding of strength training and the needs of the fitness community shaped the gym's foundation. From the very start, Gold's Gym became the epicenter of the bodybuilding scene, attracting passionate athletes and enthusiasts eager to train at the birthplace of modern fitness culture.");
         Thread.sleep(1000);
+        
+     // Upload the image 	
+        
+		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
+		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
+		uploadImage.sendKeys(imagePath);
+
+		Thread.sleep(2000);
         
         
         // Click on the save button
