@@ -1,6 +1,6 @@
 # 🚀 MyWellness Studio - Test Automation Framework
 
-A robust and scalable **UI Automation Testing Framework** built using **Selenium WebDriver, Java, and TestNG**. This project is designed to ensure high-quality testing of the *MyWellness Studio* application with maintainability, readability, and reusability at its core.
+📌 A robust and scalable **UI Automation Testing Framework** built using **Selenium WebDriver, Java, and TestNG**. This project is designed to ensure high-quality testing of the *MyWellness Studio* application with maintainability, readability, and reusability at its core.
 
 ---
 
