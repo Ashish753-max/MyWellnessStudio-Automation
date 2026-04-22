@@ -17,6 +17,43 @@ A robust and scalable **UI Automation Testing Framework** built using **Selenium
 ## 📁 Project Structure
 
 ```
+MyWellnessStudio
+│
+├── src/main/java
+├── src/main/resources
+│
+├── src/test/java
+│   ├── AppBuilder
+│   ├── Auth
+│   ├── ClinicInfo
+│   ├── Config
+│   ├── CustomPlans
+│   ├── Dashboard
+│   ├── Journey
+│   ├── JourneyRequest
+│   ├── Patient
+│   ├── Post
+│   ├── Rewards
+│   ├── RolesAndPermission
+│   ├── SpecialOffers
+│   ├── Stories
+│   ├── Tasks
+│   ├── TeamDirectory
+│   └── Videos
+│
+├── src/test/resources
+│
+├── JRE System Library [JavaSE-1.8]
+├── Maven Dependencies
+│
+├── src
+├── target
+│
+├── config.properties
+├── pom.xml
+└── README.md
+```
+
 src/test/java
 │
 ├── AppBuilder
@@ -42,19 +79,20 @@ src/test/resources
 config.properties
 pom.xml
 README.md
-```
+
+````
 
 ---
 
 ## 🧩 Key Features
 
-* ✅ Modular and scalable framework design
-* ✅ Separation of test logic using POM
-* ✅ Cross-browser testing capability (extendable)
-* ✅ Easy configuration via `config.properties`
-* ✅ Organized test modules based on application features
-* ✅ Reusable utility methods and components
-* ✅ Test execution control using TestNG XML
+- ✅ Modular and scalable framework design
+- ✅ Separation of test logic using POM
+- ✅ Cross-browser testing capability (extendable)
+- ✅ Easy configuration via `config.properties`
+- ✅ Organized test modules based on application features
+- ✅ Reusable utility methods and components
+- ✅ Test execution control using TestNG XML
 
 ---
 
@@ -62,18 +100,17 @@ README.md
 
 ### Prerequisites
 
-* Java JDK 8 or above
-* Maven installed
-* IDE (IntelliJ / Eclipse)
-* Chrome/Edge browser
+- Java JDK 8 or above
+- Maven installed
+- IDE (IntelliJ / Eclipse)
+- Chrome/Edge browser
 
 ### Installation Steps
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/your-username/mywellness-studio.git
-   ```
+````
 
 2. Navigate to the project directory:
 
