@@ -52,37 +52,6 @@ MyWellnessStudio
 ├── config.properties
 ├── pom.xml
 └── README.md
-```
-
-src/test/java
-│
-├── AppBuilder
-├── Auth
-├── ClinicInfo
-├── Config
-├── CustomPlans
-├── Dashboard
-├── Journey
-├── JourneyRequest
-├── Patient
-├── Post
-├── Rewards
-├── RolesAndPermission
-├── SpecialOffers
-├── Stories
-├── Tasks
-├── TeamDirectory
-└── Videos
-
-src/test/resources
-
-config.properties
-pom.xml
-README.md
-
-````
-
----
 
 ## 🧩 Key Features
 
