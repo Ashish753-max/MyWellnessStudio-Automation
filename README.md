@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Tech Stack
+## 🛠️ Tech Stack
 
 * **Language:** Java
 * **Automation Tool:** Selenium WebDriver
