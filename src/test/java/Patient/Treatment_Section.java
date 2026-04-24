@@ -1,10 +1,12 @@
 package Patient;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Treatment_Section {
@@ -51,9 +53,28 @@ ChromeDriver driver = new ChromeDriver();
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/button[2]")).click();
 		Thread.sleep(2000);
 		
-		// click on the treatment section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[3]/div/main/div/div/div/div/div/button[4]")).click();
-		Thread.sleep(1000);
+		// Store parent window
+				String parentWindow = driver.getWindowHandle();
+
+				// Wait until new tab opens
+				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+				
+				// Switch to new tab
+				Set<String> allWindows = driver.getWindowHandles();
+				for (String window : allWindows) {
+					if (!window.equals(parentWindow)) {
+						driver.switchTo().window(window);
+						break;
+					}
+				}
+
+				// Wait and click on Treatment tab
+				WebElement productsTab = wait.until(
+						ExpectedConditions.elementToBeClickable(
+								By.xpath("//button[contains(text(),'Treatments')]")
+						)
+				);
+				productsTab.click();
 		
 		
 	}

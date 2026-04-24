@@ -1,25 +1,26 @@
 package Patient;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Products_Section {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		
-ChromeDriver driver = new ChromeDriver();
+		ChromeDriver driver = new ChromeDriver();
 		
 		// maximize the window
 		driver.manage().window().maximize();
 		
 		// open the website 
 		driver.get("https://mydentalwellness.vercel.app/");
-		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// Click on the login button 
 		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
@@ -31,11 +32,11 @@ ChromeDriver driver = new ChromeDriver();
 		email.sendKeys("ashishappnox1@gmail.com");
 		
 		// Enter the password
-		WebElement password =driver.findElement(By.xpath("//*[@id=\"password\"]"));
+		WebElement password = driver.findElement(By.xpath("//*[@id=\"password\"]"));
 		password.sendKeys("Ashish@567");
 		
 		// click on login button
-		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
+		WebElement login = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
 		login.click();
 		Thread.sleep(3000);
 			
@@ -51,10 +52,33 @@ ChromeDriver driver = new ChromeDriver();
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/button[2]")).click();
 		Thread.sleep(1000);
 		
-		// click on the Products section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[3]/div/main/div/div/div/div/div/button[2]")).click();
-	    Thread.sleep(1000);
+		
+
+		// Store parent window
+		String parentWindow = driver.getWindowHandle();
+
+		// Wait until new tab opens
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+		
+		// Switch to new tab
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String window : allWindows) {
+			if (!window.equals(parentWindow)) {
+				driver.switchTo().window(window);
+				break;
+			}
+		}
+
+		// Wait and click on PRODUCTS tab
+		WebElement productsTab = wait.until(
+				ExpectedConditions.elementToBeClickable(
+						By.xpath("//button[contains(text(),'Products')]")
+				)
+		);
+		productsTab.click();
+
+		
+
 
 	}
-
 }
