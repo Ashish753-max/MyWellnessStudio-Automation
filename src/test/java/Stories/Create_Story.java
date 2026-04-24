@@ -18,7 +18,7 @@ ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		// open the website 
-		driver.get("https://mydentalwellness.vercel.app/");
+		driver.get("https://mydentalwellness.mwstraining.com/");
 		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// Click on the login button 
