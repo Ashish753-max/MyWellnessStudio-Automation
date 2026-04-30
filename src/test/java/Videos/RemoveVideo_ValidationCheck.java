@@ -1,7 +1,6 @@
 package Videos;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,12 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class UploadVideo {
+public class RemoveVideo_ValidationCheck {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		ChromeDriver driver = new ChromeDriver();
+ChromeDriver driver = new ChromeDriver();
         
         // maximize the window
         driver.manage().window().maximize();
@@ -72,8 +71,19 @@ public class UploadVideo {
 	   // click on the save button
 	   wait.until(ExpectedConditions.elementToBeClickable(
 			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
+	   Thread.sleep(15000);
 	   
-       
+	   // click on the edit button of the video
+	   wait.until(ExpectedConditions.elementToBeClickable(
+			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[5]/div/div/div/button"))).click();
+	   
+	   // Remove the video
+	   wait.until(ExpectedConditions.elementToBeClickable(
+			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/button[1]"))).click();
+	   
+	// click on the save button
+	   wait.until(ExpectedConditions.elementToBeClickable(
+			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 	}
 
