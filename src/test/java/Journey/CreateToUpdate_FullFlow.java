@@ -13,7 +13,7 @@ public class CreateToUpdate_FullFlow {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-ChromeDriver driver = new ChromeDriver();
+       ChromeDriver driver = new ChromeDriver();
 		
 		// maximize the window
 		driver.manage().window().maximize();
