@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_Journey {
+public class CreateToUpdate_FullFlow {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -67,6 +67,24 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// click on the save button
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
+		
+		Thread.sleep(2000);
+		
+		// Click on the edit button of the journey (first)
+				wait.until(ExpectedConditions.elementToBeClickable(
+					    By.xpath("//*[@id='root']/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/div/div/div[1]/button")))
+					    .click();
+		
+		// click on the remove image button
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/div/div/button[2]"))).click();
+				// Upload the image 		
+						WebElement uploadImage1 = driver.findElement(By.xpath("//input[@type='file']"));
+
+						String imagePath1 = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
+						uploadImage1.sendKeys(imagePath1);
+				
+				// click on the save button
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 	}
 

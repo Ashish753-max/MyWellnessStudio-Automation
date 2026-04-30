@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_Journey {
+public class RemoveImage_ValidationCheck {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -38,32 +38,19 @@ ChromeDriver driver = new ChromeDriver();
 		// click on login button
 		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
 		login.click();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 			
 		// Click on the Journey section 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[4]"))).click();
 		
-		// click on the create new journey
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/button"))).click();
-		
-		// Upload the image 		
-		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
-
-		String imagePath = "C:\\Users\\user\\Downloads\\39eb5dbc-c9fe-44c9-9506-be7739894b10.jpg";
-		uploadImage.sendKeys(imagePath);
-		
-		// Enter the Journey title
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='e.g., Weekly Acne Recovery Routine']"))).sendKeys("Patient Treatment Journey");
-		
-		// enter the description
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@placeholder='A brief explanation of this journey...']"))).sendKeys("This is the description of the patient treatment journey");
-		
-		// click on the linked treatment dropdown
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[4]/div/button"))).click();
-		// Click option (example: Facial)
+		// Click on the edit button of the journey (first)
 		wait.until(ExpectedConditions.elementToBeClickable(
-		    By.xpath("/html/body/div[2]/div/button[1]")))
-		    .click();
+			    By.xpath("//*[@id='root']/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr[1]/td[5]/div/div/div[1]/button")))
+			    .click();
+		Thread.sleep(3000);
+		
+		// click on the remove image button
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/div/div/button[2]"))).click();
 		
 		// click on the save button
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
