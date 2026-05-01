@@ -3,6 +3,7 @@ package AppBuilder;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,50 +21,70 @@ public class Create_Treatment {
 
 		
 		// open the website 
-		driver.get("https://mydentalwellness.vercel.app/");
+		driver.get("https://mydentalwellness-r897.vercel.app/");
 		WebDriverWait wait1 =new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// Click on the login button 
-		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
-		loginButton.click();
-		Thread.sleep(2000);
+		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"))).click();
 		
-		// Enter the email
-		WebElement email = driver.findElement(By.xpath("//*[@id=\"email\"]"));
-		email.sendKeys("ashishappnox1@gmail.com");
+		
+		/// Enter the email
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email\"]"))).sendKeys("ashishappnox1@gmail.com");
+		
 		
 		// Enter the password
-		WebElement password =driver.findElement(By.xpath("//*[@id=\"password\"]"));
-		password.sendKeys("Ashish@567");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"password\"]"))).sendKeys("Ashish@567");
+		
 		
 		// click on login button
 		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
 		login.click();
-		Thread.sleep(3000);
 		
 		// Click on the App builder section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]")).click();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]"))).click();
+		
 		
 		// click on the treatment section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[6]")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[6]"))).click();
+	
 		Thread.sleep(2000);
 		
-		// click on the create new treatment 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]")).click();
+		// click on the create new treatment
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]"))).click();
 		Thread.sleep(1000); 
 		
-		// Enter the story title
-				driver.findElement(By.xpath("//input[@placeholder='Treatment name']")).sendKeys("Heart Checkup");
+		// Enter the Treatment name 
+				driver.findElement(By.xpath("//input[@placeholder='Treatment name']")).sendKeys("Botox");
+				
+				Thread.sleep(1000);
+
+		
+		
+		//click on set up pricing 
+			wait.until(ExpectedConditions.presenceOfElementLocated(
+					    By.xpath("//div[contains(@class,'rounded-full') and contains(@class,'bg-primary')]"))).click();
+					
+				
+		// Enter treatment price
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='$ 0.00']"))).sendKeys("15");
+		
+		// Enter the Quantity
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0']"))).sendKeys("100");
+		
+		// click on save treatment price
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div/div/div[3]/button"))).click();
+		
+		
+		// click on upload banner image
+		// Upload the image 	
+				WebElement uploadImage = driver.findElement(
+			    By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[6]/div/div/div/div[1]/div[2]/div/div/button")
+							);
+
+			    uploadImage.sendKeys("C:\\Users\\user\\Downloads\\6f764e27-2238-4e16-948a-0c1cd52e4589 (1).jpg");
 				Thread.sleep(2000);
 		
-		// Upload the image 	
-		WebElement uploadImage = driver.findElement(
-	    By.xpath("//div[contains(@class,'border-dashed')]//input[@type='file']")
-					);
-
-	    uploadImage.sendKeys("C:\\Users\\user\\Pictures\\Screenshots\\download.jpg");
-		Thread.sleep(2000);
+		
 
 		
 		

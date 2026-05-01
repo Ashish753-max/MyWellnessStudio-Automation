@@ -19,7 +19,7 @@ public class AssignJourney_Patient {
         driver.manage().window().maximize();
         
         // open the website 
-        driver.get("https://mydentalwellness.mwstraining.com/");
+        driver.get("https://mydentalwellness-r897.vercel.app/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         // Click on the login button 
@@ -32,17 +32,18 @@ public class AssignJourney_Patient {
         email.sendKeys("ashishappnox1@gmail.com");
         
         // Enter the password
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("Ashish@567");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys("Ashish@567");
+      
         
         // click on login button
-        WebElement login = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
-        login.click();
-        
-        
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"))).click();
+        Thread.sleep(2500);
+              
      // Click on the patient section 
-     		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]/a")).click();
-     		Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]/a"))).click();
+     	
+        // click on view details of the patient
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[8]/div/div/div/button"))).click();
      		
 	}
 
