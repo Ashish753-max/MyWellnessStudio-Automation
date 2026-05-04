@@ -20,7 +20,7 @@ public class UploadConcernImage_Home {
         driver.manage().window().maximize();
         
         // open the website 
-        driver.get("https://mydentalwellness.mwstraining.com/");
+        driver.get("https://mydentalwellness-r897.vercel.app/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         
         // Click on the login button 
@@ -47,7 +47,7 @@ public class UploadConcernImage_Home {
         
   
      		// click on the concern section
-     		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[4]/div[2]/div[1]/div[2]/div/button"))).click();
+     	//	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[4]/div[2]/div[1]/div[2]/div/button"))).click();
      		
      		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
 

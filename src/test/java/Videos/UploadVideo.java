@@ -21,7 +21,7 @@ public class UploadVideo {
         driver.manage().window().maximize();
         
         // open the website 
-        driver.get("https://mydentalwellness.mwstraining.com/");
+        driver.get("https://mydentalwellness-r897.vercel.app/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
         
         // Click on the login button 

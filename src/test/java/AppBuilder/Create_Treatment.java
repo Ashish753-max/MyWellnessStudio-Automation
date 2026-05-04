@@ -85,11 +85,6 @@ public class Create_Treatment {
 				Thread.sleep(2000);
 		
 		
-
-		
-		
-		
-		
 		
 
 	}

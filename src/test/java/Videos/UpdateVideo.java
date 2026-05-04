@@ -20,7 +20,7 @@ ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         
         // open the website 
-        driver.get("https://mydentalwellness.mwstraining.com/");
+        driver.get("https://mydentalwellness-r897.vercel.app/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
         
         // Click on the login button 
@@ -78,8 +78,8 @@ ChromeDriver driver = new ChromeDriver();
 			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[5]/div/div/div/button"))).click();
 	   
 	   // Update the video
-	   wait.until(ExpectedConditions.elementToBeClickable(
-			   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/button[2]"))).click();
+	//   wait.until(ExpectedConditions.elementToBeClickable(
+	//		   By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/button[2]"))).click();
 	   
 	   WebElement uploadVideo1 = driver.findElement(By.xpath("//input[@type='file']"));
 
