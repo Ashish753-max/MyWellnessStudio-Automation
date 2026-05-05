@@ -33,11 +33,11 @@ ChromeDriver driver = new ChromeDriver();
         email.sendKeys("ashishappnox1@gmail.com");
         
         // Enter the password
-        WebElement password = driver.findElement(By.id("password"));
+        WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
         password.sendKeys("Ashish@567");
         
         // click on login button
-        WebElement login = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
+        WebElement login = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button")));
         login.click();
         
         // Click on the Videos section
