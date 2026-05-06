@@ -1,4 +1,4 @@
-package Stories;
+package Videos;
 
 import java.time.Duration;
 
@@ -8,9 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Remove_StoryImage {
+public class RemoveVideo {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 ChromeDriver driver = new ChromeDriver();
@@ -39,30 +39,20 @@ ChromeDriver driver = new ChromeDriver();
         
         WebElement login = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button")));
         login.click();
-			
-		// Click on the Stories section 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[2]")).click();
-		Thread.sleep(2000);
-		
-		// click on new story
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/button")).click();
-		Thread.sleep(1000);
-		
-		// Enter the story title
-		driver.findElement(By.xpath("//input[@placeholder='e.g., Client Success Journey']")).sendKeys("Patient Treatment Story");
-		Thread.sleep(1000);
-		
-		// Upload the image 		
-		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
-
-		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
-		uploadImage.sendKeys(imagePath);
-
-		Thread.sleep(2000);
-		
-		// Click on the remove image button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div/div/button[2]")).click();
-		
+        
+        // Click on the Videos section
+        WebElement video = wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[3]")));
+        video.click();
+        
+        // click on the edit button of the video
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[5]/div/div/div/button"))).click();
+        
+        // click on the delete button
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div/div/div/button[1]"))).click();
+        
+        // click on the update video button
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 	}
 

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Create_Package1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 ChromeDriver driver = new ChromeDriver();
@@ -94,10 +94,20 @@ ChromeDriver driver = new ChromeDriver();
 				By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/div/div/div/div[3]/button[2]")
 		)).click();
 		
-		// enter the image
-		wait.until(ExpectedConditions.presenceOfElementLocated(
-				By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/div/div[1]/div/div[7]/div/div/div")
-		)).sendKeys("C:\\Users\\user\\Downloads\\6f764e27-2238-4e16-948a-0c1cd52e4589 (1).jpg");
+		
+		// Upload the image 		
+		// Click upload area (if needed)
+		WebElement btn1 = wait.until(ExpectedConditions.presenceOfElementLocated(
+		        By.xpath("//span[contains(text(),'Select Image')]")
+		));
+
+		((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", btn1);
+
+		// Then upload
+		WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
+		fileInput.sendKeys("C:\\Users\\user\\Pictures\\Screenshots\\download.jpg");
+
+				Thread.sleep(2000);
 		
 
 	}
