@@ -18,7 +18,6 @@ public class Login {
 		// maximize the window
 		driver.manage().window().maximize();
 	//	WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
-
 		
 		// open the website 
 		driver.get("https://mydentalwellness-r897.vercel.app/");
