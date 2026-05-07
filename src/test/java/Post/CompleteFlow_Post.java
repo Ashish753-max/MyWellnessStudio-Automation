@@ -84,6 +84,7 @@ ChromeDriver driver = new ChromeDriver();
 			// click on the publish button
 			wait.until(ExpectedConditions.elementToBeClickable(
 					By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
+			Thread.sleep(2000);
 			
 			// click on the archive button
 	        WebElement archive = wait.until(ExpectedConditions.elementToBeClickable(

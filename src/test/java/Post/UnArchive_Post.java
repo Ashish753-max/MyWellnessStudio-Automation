@@ -56,6 +56,7 @@ ChromeDriver driver = new ChromeDriver();
         // Nevigate to archived section to verify 
         WebElement archived=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/div[1]/button[3]")));
         archived.click();
+        Thread.sleep(1000);
         
         //click on the unarchive button
         WebElement unarchive=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[5]/div/div/div/button")));

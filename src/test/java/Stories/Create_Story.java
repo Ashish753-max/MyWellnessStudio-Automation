@@ -55,7 +55,7 @@ ChromeDriver driver = new ChromeDriver();
 		// Upload the image 		
 		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
 
-		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
+		String imagePath = "C:\\Users\\user\\Downloads\\95fc8fc4-2fe1-4fe9-991b-e6fd97df56f0 (3).png";
 		uploadImage.sendKeys(imagePath);
 
 		Thread.sleep(2000);
