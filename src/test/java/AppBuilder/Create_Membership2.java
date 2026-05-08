@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Unarchive_Membership {
+public class Create_Membership2 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -48,16 +48,28 @@ ChromeDriver driver = new ChromeDriver();
         ));
         package1.click();
         
+        //click on the create new membership
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]"))).click();
         
+        // Enter the membership name
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter membership name']"))).sendKeys("Luxe");
         
-        // click on the archived tab
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[1]/div/button[2]"))).click();
+        //Enter the price
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0.00']"))).sendKeys("299");
+        
+        //Click on Commitment period
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[2]/div[2]/label[2]/div"))).click();
+        
+        // enter the commitment period
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0']"))).sendKeys("6");
         Thread.sleep(1000);
-        // click on the unarchive button
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[11]/div/div/div[1]/button"))).click();
         
-        // click on the confirm unarchive button
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[2]/div[2]/div[2]/div/button[2]"))).click();
+        // Enter the description
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[4]/textarea"))).sendKeys("Get your glow on with our Luxe Membership! This membership features your selection of a premium monthly treatment, along with exclusive benefits on additional treatments and products!");
+        
+        
+        // Click on the save button
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 	}
 

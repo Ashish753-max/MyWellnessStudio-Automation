@@ -13,68 +13,64 @@ public class Create_Membership1 {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		ChromeDriver driver = new ChromeDriver();
-		
-		// maximize the window
-		driver.manage().window().maximize();
-		
-		// open the website 
-		driver.get("https://mydentalwellness.vercel.app/");
-		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
-		
-		// Click on the login button 
-		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
-		loginButton.click();
-		Thread.sleep(2000);
-		
-		// Enter the email
-		WebElement email = driver.findElement(By.xpath("//*[@id=\"email\"]"));
-		email.sendKeys("ashishappnox1@gmail.com");
-		
-		// Enter the password
-		WebElement password =driver.findElement(By.xpath("//*[@id=\"password\"]"));
-		password.sendKeys("Ashish@567");
-		
-		// click on login button
-		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
-		login.click();
-		Thread.sleep(3000);
-		
-		// Click on the App builder section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]")).click();
-		Thread.sleep(2000);
-		
-		// click on the Membership section
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[5]")).click();
-		Thread.sleep(2000);
-		
-		// click on the create new membership
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]")).click();
-		Thread.sleep(1000);
-		
-		// Enter the memberhship name 
-		WebElement membershipName = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Enter membership name']")));
-        membershipName.sendKeys("Gold's");
-		
-		// Enter the price 
-		driver.findElement(By.xpath("//input[@placeholder='0.00']")).sendKeys("50");
-		Thread.sleep(1000);
-		
-		// Enter the description
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[3]/textarea")).sendKeys("His unique understanding of strength training and the needs of the fitness community shaped the gym's foundation. From the very start, Gold's Gym became the epicenter of the bodybuilding scene, attracting passionate athletes and enthusiasts eager to train at the birthplace of modern fitness culture.");
+ChromeDriver driver = new ChromeDriver();
+        
+        // maximize the window
+        driver.manage().window().maximize();
+        
+        // open the website 
+        driver.get("https://mydentalwellness-r897.vercel.app/");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        
+        // Click on the login button 
+        WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button")));
+        loginButton.click();
+        
+        // Enter the email
+        WebElement email = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        email.sendKeys("ashishappnox1@gmail.com");
+        
+        // Enter the password
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("Ashish@567");
+        
+        // click on login button
+        WebElement login = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
+        login.click();
+        
+     // Click on the App builder section
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]"))).click();
+     	
+       	  	// click on the Membership section
+        WebElement package1 = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[5]")
+        ));
+        package1.click();
+        
+        //click on the create new membership
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]"))).click();
+        
+        // Enter the membership name
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter membership name']"))).sendKeys("Radiance");
+        
+        //Enter the price
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0.00']"))).sendKeys("199");
+        
+        //Click on Commitment period
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[2]/div[2]/label[2]/div"))).click();
+        
+        // enter the commitment period
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0']"))).sendKeys("6");
         Thread.sleep(1000);
         
-     // Upload the image 	
+        // Enter the description
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[4]/textarea"))).sendKeys("Love the skin you’re in with our Radiance Membership! Enjoy your selection of a premium treatment each month, along with exclusive member-only benefits on your favorite treatments and products!");
         
-		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
-		String imagePath = "C:\\Users\\user\\Pictures\\Screenshots\\download.jpg";
-		uploadImage.sendKeys(imagePath);
-
-		Thread.sleep(2000);
-                
+        
         // Click on the save button
-        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[2]/button[2]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
+        
 	}
 
 }
