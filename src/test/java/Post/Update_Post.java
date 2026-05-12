@@ -3,6 +3,7 @@ package Post;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,12 +42,31 @@ ChromeDriver driver = new ChromeDriver();
         login.click();
 			
 		// Click on the Post section 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[1]")).click();
-		Thread.sleep(2000);
-		
+        wait.until(ExpectedConditions.elementToBeClickable(
+				 By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[1]"))).click();
+				
 		// Click on the edit button
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[5]/div/div/button")).click();
-		Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr/td[5]/div/div/div[1]/button"))).click();
+        
+        WebElement description = wait.until(
+        	    ExpectedConditions.elementToBeClickable(
+        	        By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[3]/div/textarea")
+        	    )
+        	);
+
+        	description.click();
+
+        	description.sendKeys(Keys.CONTROL + "a");
+        	Thread.sleep(500);
+
+        	description.sendKeys(Keys.BACK_SPACE);
+        	Thread.sleep(500);
+
+        	description.sendKeys("This is an updated post description.");
+        	
+        	// click on the update button
+        	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
+		
 		
 	}
 }

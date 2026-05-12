@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Create_Treatment {
 
-	public static void main(String[] args) throws InterruptedException {
+	   public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
         ChromeDriver driver = new ChromeDriver();
 		
@@ -47,18 +47,14 @@ public class Create_Treatment {
 		// click on the treatment section
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[6]"))).click();
 	
-		Thread.sleep(2000);
+		
 		
 		// click on the create new treatment
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/div[1]/div[2]/button[2]"))).click();
-		Thread.sleep(1000); 
+		
 		
 		// Enter the Treatment name 
-				driver.findElement(By.xpath("//input[@placeholder='Treatment name']")).sendKeys("Botox");
-				
-				Thread.sleep(1000);
-
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Treatment name']"))).sendKeys("Teeth Whitening");
 		
 		//click on set up pricing 
 			wait.until(ExpectedConditions.presenceOfElementLocated(
