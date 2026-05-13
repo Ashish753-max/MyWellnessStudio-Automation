@@ -23,9 +23,8 @@ ChromeDriver driver = new ChromeDriver();
 		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// Click on the login button 
-		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"));
-		loginButton.click();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/nav/div/div[2]/div/a[1]/button"))).click();
+		
 		
 		// Enter the email
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email\"]"))).sendKeys("ashishappnox1@gmail.com");
@@ -38,17 +37,27 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// click on login button
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"))).click();
-		
+		Thread.sleep(3000);
 			
 		// Click on the patient section 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]/a"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]"))).click();
 		
 		
 		// Click on the Add patient
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/div[2]/button"))).click();
+		Thread.sleep(1000);
 		
-		// Enter the patient name
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/form/div[1]/div[1]/div/input"))).sendKeys("Ashish");
+		// Enter the patient first name
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter Patient's First Name']"))).sendKeys("Vishal");
+		
+		// Enter the patient last name
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter Patient's Last Name']"))).sendKeys("Kumar");
+		
+		// Select the DOB
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[1]/div[3]/div[1]/div"))).click();
+		
+		// select the date 
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div/div/table/tbody/tr[2]/td[1]/button"))).click();
 
 	}
 

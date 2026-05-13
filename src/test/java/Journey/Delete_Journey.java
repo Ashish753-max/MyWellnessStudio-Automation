@@ -38,7 +38,7 @@ ChromeDriver driver = new ChromeDriver();
         // click on login button
         wait.until(ExpectedConditions.elementToBeClickable(
 				By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"))).click();
-			
+		
 		// Click on the Journey section 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[4]/nav/div[4]"))).click();
 		
