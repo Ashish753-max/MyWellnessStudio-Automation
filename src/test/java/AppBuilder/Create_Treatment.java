@@ -1,6 +1,7 @@
 package AppBuilder;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -54,7 +55,7 @@ public class Create_Treatment {
 		
 		
 		// Enter the Treatment name 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Treatment name']"))).sendKeys("Teeth Whitening");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Treatment name']"))).sendKeys("Bio-Care");
 		
 		//click on set up pricing 
 		// click on set up pricing
@@ -68,10 +69,10 @@ public class Create_Treatment {
 					
 				
 		// Enter treatment price
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='$ 0.00']"))).sendKeys("15");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='$ 0.00']"))).sendKeys("1400");
 		
 		// Enter the Quantity
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0']"))).sendKeys("100");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='0']"))).sendKeys("1");
 		
 		// click on save treatment price
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div/div/div[3]/button"))).click();
@@ -84,8 +85,16 @@ public class Create_Treatment {
 				));
 
 				((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", btn1);    */
-				WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
-				fileInput.sendKeys("C:\\\\Users\\\\user\\\\Downloads\\\\b8e8ec2e-bb17-4b84-b04b-d22f8841bf70 (4).jpg");
+		List<WebElement> inputs = driver.findElements(By.xpath("//input[@type='file']"));
+
+		inputs.get(1).sendKeys(
+		    "C:\\Users\\user\\Downloads\\aa7c5c52-0b7a-4521-821a-aeece5b5234f (2).jpg"
+		);
+		
+		// Enter the description
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[8]/div/textarea"))).sendKeys("The Biocare facial treatment is a non-invasive, multi-step procedure designed to improve the appearance of your skin and address signs of aging. The five-step treatment utilizes advanced technology and extensive research to naturally reduce and reverse signs of facial aging.");
+		
+		
 
 		
 		

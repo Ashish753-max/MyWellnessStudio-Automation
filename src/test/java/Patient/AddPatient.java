@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddPatient {
@@ -18,7 +19,7 @@ ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		// open the website 
-		driver.get("https://mydentalwellness.vercel.app/");
+		driver.get("https://mydentalwellness-r897.vercel.app/");
 		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// Click on the login button 
@@ -27,25 +28,27 @@ ChromeDriver driver = new ChromeDriver();
 		Thread.sleep(2000);
 		
 		// Enter the email
-		WebElement email = driver.findElement(By.xpath("//*[@id=\"email\"]"));
-		email.sendKeys("ashishappnox1@gmail.com");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email\"]"))).sendKeys("ashishappnox1@gmail.com");
+		
+		
 		
 		// Enter the password
-		WebElement password =driver.findElement(By.xpath("//*[@id=\"password\"]"));
-		password.sendKeys("Ashish@567");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"password\"]"))).sendKeys("Ashish@567");
+
 		
 		// click on login button
-		WebElement login= driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"));
-		login.click();
-		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/form/button"))).click();
+		
 			
 		// Click on the patient section 
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]/a")).click();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[1]/nav/div[2]/a"))).click();
+		
 		
 		// Click on the Add patient
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[1]/div[2]/div[2]/button")).click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button"))).click();
+		
+		// Enter the patient name
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[2]/form/div[1]/div[1]/div/input"))).sendKeys("Ashish");
 
 	}
 

@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -73,7 +74,18 @@ public class Remove_StoryImage {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr[1]/td[4]/div/div/div[1]/button"))).click();
 		
 		// Click on the remove image button
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div/div/button[1]"))).click();
+		// Locate the image area where hover is needed
+		WebElement imageArea = wait.until(
+		    ExpectedConditions.visibilityOfElementLocated(
+		        By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div")
+		    )
+		);
+
+		// Hover on image
+		Actions actions = new Actions(driver);
+		actions.moveToElement(imageArea).perform();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[2]/div/div/div/div/button[2]"))).click();
 		
 
 	}

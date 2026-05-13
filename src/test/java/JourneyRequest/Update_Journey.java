@@ -45,6 +45,15 @@ ChromeDriver driver = new ChromeDriver();
 		
 		// click on the edit button of the journey
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/div[1]/table/tbody/tr[1]/td[6]/div/div/div[1]/button"))).click();
+        
+        // click on the dropdownt to update 
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[3]/div[2]/button"))).click();
+        
+        // select the option from the dropdown
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/button[3]"))).click();
+        
+        // click on the update schedule button
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 	}
 
