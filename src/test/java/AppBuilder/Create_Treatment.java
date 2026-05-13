@@ -57,8 +57,14 @@ public class Create_Treatment {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Treatment name']"))).sendKeys("Teeth Whitening");
 		
 		//click on set up pricing 
-			wait.until(ExpectedConditions.presenceOfElementLocated(
-					    By.xpath("//div[contains(@class,'rounded-full') and contains(@class,'bg-primary')]"))).click();
+		// click on set up pricing
+		WebElement btn = wait.until(
+		    ExpectedConditions.elementToBeClickable(
+		        By.xpath("//p[contains(text(),'Set Up Pricing')]")
+		    )
+		);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
 					
 				
 		// Enter treatment price
@@ -71,14 +77,16 @@ public class Create_Treatment {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div/div/div[3]/button"))).click();
 		
 		
-		// click on upload banner image
-		// Upload the image 	
-				WebElement uploadImage = driver.findElement(
-			    By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[6]/div/div/div/div[1]/div[2]/div/div/button")
-							);
+		// Upload the image 		
+				// Click upload area (if needed)
+		/*		WebElement btn1 = wait.until(ExpectedConditions.presenceOfElementLocated(
+				        By.xpath("//span[contains(text(),'Select Image')]")
+				));
 
-			    uploadImage.sendKeys("C:\\Users\\user\\Downloads\\6f764e27-2238-4e16-948a-0c1cd52e4589 (1).jpg");
-				Thread.sleep(2000);
+				((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", btn1);    */
+				WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
+				fileInput.sendKeys("C:\\\\Users\\\\user\\\\Downloads\\\\b8e8ec2e-bb17-4b84-b04b-d22f8841bf70 (4).jpg");
+
 		
 		
 		

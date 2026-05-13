@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_Journey {
+public class Create_Journey1 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -48,14 +48,14 @@ ChromeDriver driver = new ChromeDriver();
 		// Upload the image 		
 		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
 
-		String imagePath = "C:\\Users\\user\\Downloads\\39eb5dbc-c9fe-44c9-9506-be7739894b10.jpg";
+		String imagePath = "C:\\Users\\user\\Downloads\\4c7lztbca7m8vwvf6da670548bul (1).jpg";
 		uploadImage.sendKeys(imagePath);
 		
 		// Enter the Journey title
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='e.g., Weekly Acne Recovery Routine']"))).sendKeys("Patient Treatment Journey");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='e.g., Weekly Acne Recovery Routine']"))).sendKeys("BBL - Acne");
 		
 		// enter the description
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@placeholder='A brief explanation of this journey...']"))).sendKeys("This is the description of the patient treatment journey");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@placeholder='A brief explanation of this journey...']"))).sendKeys("Improves acne and supports clearer skin");
 		
 		// click on the linked treatment dropdown
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div[3]/div[2]/form/div[1]/div[4]/div/button"))).click();

@@ -49,15 +49,15 @@ ChromeDriver driver = new ChromeDriver();
         wait.until(ExpectedConditions.elementToBeClickable(
 				By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[6]"))).click();
         
-        // click on upload
+   /*     // click on upload
         wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[1]/div[2]/div[1]/div[2]/div/button"))).click();
+				By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div[1]/div[2]/div[1]/div[2]/div/button"))).click();   */
+        
+        Thread.sleep(2000);
         
      // Upload the image 		
-     		WebElement uploadImage = driver.findElement(By.xpath("//input[@type='file']"));
-
-     		String imagePath = "C:\\Users\\user\\Downloads\\b8e8ec2e-bb17-4b84-b04b-d22f8841bf70 (1).jpg";
-     		uploadImage.sendKeys(imagePath);
+        WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
+		fileInput.sendKeys("C:\\\\Users\\\\user\\\\Downloads\\\\b8e8ec2e-bb17-4b84-b04b-d22f8841bf70 (4).jpg");
         
      		
 
