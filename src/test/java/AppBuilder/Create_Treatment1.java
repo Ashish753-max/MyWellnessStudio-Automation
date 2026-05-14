@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_Treatment {
+public class Create_Treatment1 {
 
 	   public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -94,7 +94,8 @@ public class Create_Treatment {
 		// Enter the description
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[8]/div/textarea"))).sendKeys("The Biocare facial treatment is a non-invasive, multi-step procedure designed to improve the appearance of your skin and address signs of aging. The five-step treatment utilizes advanced technology and extensive research to naturally reduce and reverse signs of facial aging.");
 		
-		
+		// Click on the Add new treatment button
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[2]/button[2]"))).click();
 
 		
 		
