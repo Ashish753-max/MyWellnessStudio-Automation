@@ -1,4 +1,4 @@
-package AppBuilder;
+package ExploratoryTesting;
 
 import java.time.Duration;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Create_DiscoverCardWithContentCard {
+public class AppBuilderSection {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -41,24 +41,6 @@ ChromeDriver driver = new ChromeDriver();
         
      // Click on the App builder section
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/aside/div[2]/div[2]/nav/div[2]"))).click();
-     	
-       	  	// click on the Discover card section
-        WebElement package1 = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[2]/button[2]")
-        ));
-        package1.click();
-        
-        //click on the create new discover card
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div/div/div[1]/div[2]/button[2]"))).click();
-        
-        //click on the content card
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[2]/div/div[2]/div/div[2]/div[1]/button"))).click();
-        
-        // Enter the title of the content card
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter title']"))).sendKeys("Oral hygiene tips");
-        
-        //Enter the headline
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div/main/div/div/div[3]/div/div/div[3]/div[2]/form/div[1]/div/div[1]/div[2]/div[2]/div/textarea"))).sendKeys("Learn how to maintain good oral hygiene with our expert tips and advice.");
 
 	}
 
